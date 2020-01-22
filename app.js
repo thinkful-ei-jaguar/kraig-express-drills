@@ -56,6 +56,8 @@ app.get("/cipher", (req,res)=>{
 charArray.map(each=> caesarCipher.push( each+shift))
 caesarCipher.map(each=>final.push(String.fromCharCode(each)))
 console.log('this is final', final)
+const result= final.join('')
+res.status(200).send(result)
 })
 
 app.listen(8000, () => {
